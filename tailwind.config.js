@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors'); // Đảm bảo dòng này có ở đầu file
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -6,6 +8,8 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    './index.html', // Thêm dòng này nếu bạn dùng index.html trực tiếp
+    './node_modules/vue-tailwind-datepicker/**/*.vue' // Rất quan trọng: Thêm đường dẫn này
   ],
   prefix: "",
   theme: {
@@ -18,6 +22,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        // Cấu hình màu sắc hiện có của bạn
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,6 +80,8 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Thêm cấu hình màu vtd-primary vào đây
+        'vtd-primary': colors.orange, // Hoặc mã màu cam cụ thể của bạn nếu không dùng colors.orange
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
@@ -122,5 +129,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'), // Thêm plugin forms nếu chưa có
+  ],
 };
