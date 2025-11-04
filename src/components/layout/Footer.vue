@@ -98,5 +98,5 @@ export default {
 </script>
 
 <style scoped>
-/* Không cần CSS tùy chỉnh nhiều nếu đã dùng Tailwind */
+
 </style>

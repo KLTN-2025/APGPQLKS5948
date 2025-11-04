@@ -14,15 +14,14 @@
 <script setup>
 import { defineProps, markRaw } from 'vue';
 
-// Import các icon cụ thể từ Heroicons
-// Bạn có thể chọn giữa 'outline' (nét mảnh), 'solid' (tô đặc) hoặc 'mini' (miniature)
+
 import {
-  TruckIcon, // Ví dụ cho Đưa đón (Shuttle)
+  TruckIcon, 
   TruckIcon as ParkingIcon, // Đặt lại tên để tránh trùng lặp nếu TruckIcon được dùng cho cả 2 mục đích
-  BuildingStorefrontIcon, // Ví dụ cho Dịch vụ phòng (Room Service) - hoặc một icon phù hợp hơn
-  SwatchIcon, // Ví dụ cho Hồ bơi (Pool) - hoặc WaterSymbolIcon
-  WifiIcon, // Ví dụ cho Internet (Wifi)
-  CakeIcon, // Ví dụ cho Bữa ăn sáng (Breakfast) - hoặc CogIcon
+  BuildingStorefrontIcon, 
+  SwatchIcon, 
+  WifiIcon, 
+  CakeIcon, 
 } from '@heroicons/vue/24/outline'; // Sử dụng outline icons
 
 const props = defineProps({
@@ -43,7 +42,6 @@ const props = defineProps({
 // Ánh xạ chuỗi tên icon với component Heroicons thực tế
 const iconComponents = {
   shuttle: markRaw(TruckIcon),
-  // Đối với Parking, nếu bạn muốn dùng icon khác, hãy import nó và gán vào đây
   parking: markRaw(ParkingIcon), // Tạm dùng lại TruckIcon hoặc tìm icon phù hợp hơn
   roomService: markRaw(BuildingStorefrontIcon), // Hoặc ClipboardDocumentListIcon, HomeModernIcon
   pool: markRaw(SwatchIcon), // Hoặc WaterSymbolIcon nếu có, hoặc CircleStackIcon
@@ -57,5 +55,5 @@ const iconComponent = iconComponents[props.icon];
 </script>
 
 <style scoped>
-/* Không cần style scoped nhiều với Tailwind */
+
 </style>

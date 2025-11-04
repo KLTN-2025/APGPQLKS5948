@@ -17,7 +17,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const showButton = ref(false); // Trạng thái hiển thị của nút
 
 const handleScroll = () => {
-  // Hiển thị nút khi cuộn xuống một khoảng nhất định (ví dụ: 200px)
+  // Hiển thị nút khi cuộn xuống một khoảng nhất định 
   showButton.value = window.scrollY > 200;
 };
 
@@ -38,5 +38,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Không cần thêm style cụ thể nếu đã dùng Tailwind CSS */
+
 </style>

@@ -42,5 +42,5 @@ const props = defineProps({
 </script>
 
 <style scoped>
-/* Không cần style scoped nhiều với Tailwind */
+
 </style>

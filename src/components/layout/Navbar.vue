@@ -1,17 +1,24 @@
 <template>
   <nav class="bg-black bg-opacity-70 fixed w-full z-50 top-0">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Logo -->
-      <a href="#" class="flex items-center">
+      <router-link to="/" class="flex items-center">
         <img src="/logo.png" alt="Mona Media Logo" class="h-20 md:h-20">
-      </a>
+      </router-link>
 
-      <!-- Menu Desktop -->
       <div class="hidden md:flex space-x-8">
-        <a v-for="item in navItems" :key="item.name" :href="item.link" class="text-white hover:text-orange-400 transition duration-300">
+        <router-link
+          v-for="item in navItems"
+          :key="item.name"
+          :to="item.path"
+          class="text-white hover:text-orange-400 transition duration-300"
+          @click="closeMobileMenu"
+        >
           {{ item.name }}
-        </a>
-        <button class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+        </router-link>
+        <button
+          @click="goToBooking"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition duration-300"
+        >
           ĐẶT PHÒNG NGAY
         </button>
       </div>
@@ -47,15 +54,22 @@
             <img src="/logo.png" alt="Mona Media Logo" class="h-16 mx-auto">
           </div>
 
-          <!-- Các mục điều hướng -->
-          <a v-for="item in navItems" :key="item.name" :href="item.link"
-             class="block text-white text-lg font-semibold px-4 py-3 hover:bg-gray-800 transition duration-300 rounded-md">
+          <router-link
+             v-for="item in navItems"
+             :key="item.name"
+             :to="item.path"
+             class="block text-white text-lg font-semibold px-4 py-3 hover:bg-gray-800 transition duration-300 rounded-md"
+             @click="closeMobileMenu" 
+          >
             {{ item.name }}
-          </a>
+          </router-link>
 
-          <!-- Nút Đặt Phòng Ngay -->
+          <!-- Nút Đặt Phòng Ngay - Đã thay đổi thành @click để điều hướng -->
           <div class="px-4 mt-8">
-            <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition duration-300">
+            <button
+              @click="goToBooking"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition duration-300"
+            >
               ĐẶT PHÒNG NGAY
             </button>
           </div>
@@ -67,21 +81,34 @@
 
 <script>
 import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router'; 
 
 export default {
   setup() {
     const isMobileMenuOpen = ref(false);
+    const router = useRouter(); 
+
     const navItems = [
-      { name: 'TRANG CHỦ', link: '#' },
-      { name: 'GIỚI THIỆU', link: '#' },
-      { name: 'DANH SÁCH PHÒNG', link: '#' },
-      { name: 'DỊCH VỤ', link: '#' },
-      { name: 'TIN TỨC', link: '#' },
-      { name: 'LIÊN HỆ', link: '#' },
+      { name: 'TRANG CHỦ', path: '/' },
+      { name: 'GIỚI THIỆU', path: '/gioi-thieu' }, 
+      { name: 'DANH SÁCH PHÒNG', path: '/phong' },
+      { name: 'DỊCH VỤ', path: '/dich-vu' }, 
+      { name: 'TIN TỨC', path: '/tin-tuc' }, 
+      { name: 'LIÊN HỆ', path: '/lien-he' },
     ];
 
     const toggleMobileMenu = () => {
       isMobileMenuOpen.value = !isMobileMenuOpen.value;
+    };
+
+    const closeMobileMenu = () => {
+      isMobileMenuOpen.value = false;
+    };
+
+    // Hàm điều hướng cho nút "ĐẶT PHÒNG NGAY"
+    const goToBooking = () => {
+      closeMobileMenu(); // Đóng menu mobile nếu đang mở
+      router.push('/dat-phong'); // Chuyển đến trang đặt phòng 
     };
 
     // Để ngăn cuộn trang khi menu mobile mở
@@ -97,14 +124,15 @@ export default {
       isMobileMenuOpen,
       navItems,
       toggleMobileMenu,
+      closeMobileMenu, // Thêm để có thể đóng menu khi click vào link
+      goToBooking,     // Thêm hàm điều hướng
     };
   },
 };
 </script>
 
 <style scoped>
-/* Optional: Thêm một số transition cơ bản cho Vue transition component nếu bạn muốn*/
-/* Tuy nhiên, Tailwind CSS classes đã xử lý hầu hết các transition rồi */
+
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: opacity 0.3s ease;
 }
