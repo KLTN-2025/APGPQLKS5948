@@ -24,9 +24,9 @@
       <div class="col-span-1">
         <h3 class="text-white font-semibold text-lg mb-4">Địa Chỉ</h3>
         <p class="text-sm mb-2">
-          1073/23 Cách Mạng Tháng 8, P.7, Q.Tân Bình, TP.HCM.
+          485 Nguyễn Tất Thành, Xuân Hà, Thanh Khê, Đà Nẵng
         </p>
-        <a href="https://maps.app.goo.gl/YourGoogleMapsLink" target="_blank" class="text-orange-400 hover:text-orange-500 transition duration-300 text-sm">
+        <a href="https://maps.app.goo.gl/9E5hPdUW7bH5Ybpp7" target="_blank" class="text-orange-400 hover:text-orange-500 transition duration-300 text-sm">
           Xem Google Map
         </a>
       </div>
@@ -37,12 +37,12 @@
         <div class="flex items-center mb-2">
           <!-- Phone Icon -->
           <svg class="w-5 h-5 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-          <span>(+84) 0313-728-397</span>
+          <span>(+84) 0877171116</span>
         </div>
         <div class="flex items-center mb-4">
           <!-- Email Icon -->
           <svg class="w-5 h-5 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-          <span>info@themomehotel.global.</span>
+          <span>tc@themomehotel.global.</span>
         </div>
 
         <!-- Social Media Icons -->
